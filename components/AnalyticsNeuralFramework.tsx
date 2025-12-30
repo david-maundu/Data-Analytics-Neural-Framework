@@ -399,14 +399,13 @@ const AnalyticsNeuralFramework: React.FC = () => {
                   <section>
                     <SectionHeader id="problemFraming" title="Initial Potential: Problem Framing" badgeText="Potential Vector" badgeColor="indigo" />
                     {!collapsedSections['problemFraming'] && (
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 items-stretch">
                         <SliderGroup title="🎯 Definition" values={getValuesForGroup(appState.problemFramingKeys.definition, appState.problemFraming)} onValueChange={(key, value) => setAppState(p => ({...p, problemFraming: {...p.problemFraming, [key]: value}}))} color="blue" category="problemFraming" subcategory={null} onAddCustomFactor={() => handleOpenModal('problemFraming', 'definition', null)} onRemoveFactor={(name) => removeFactor('problemFraming', name, 'definition')} onResetGroup={() => handleResetGroup('problemFraming', 'definition')} />
                         <SliderGroup title="👥 Stakeholders" values={getValuesForGroup(appState.problemFramingKeys.stakeholder, appState.problemFraming)} onValueChange={(key, value) => setAppState(p => ({...p, problemFraming: {...p.problemFraming, [key]: value}}))} color="indigo" category="problemFraming" subcategory={null} onAddCustomFactor={() => handleOpenModal('problemFraming', 'stakeholder', null)} onRemoveFactor={(name) => removeFactor('problemFraming', name, 'stakeholder')} onResetGroup={() => handleResetGroup('problemFraming', 'stakeholder')} />
                         <SliderGroup title="💼 Business" values={getValuesForGroup(appState.problemFramingKeys.business, appState.problemFraming)} onValueChange={(key, value) => setAppState(p => ({...p, problemFraming: {...p.problemFraming, [key]: value}}))} color="green" category="problemFraming" subcategory={null} onAddCustomFactor={() => handleOpenModal('problemFraming', 'business', null)} onRemoveFactor={(name) => removeFactor('problemFraming', name, 'business')} onResetGroup={() => handleResetGroup('problemFraming', 'business')} />
                         <SliderGroup title="📊 Data & Analytics Readiness" values={getValuesForGroup(appState.problemFramingKeys.readiness, appState.problemFraming)} onValueChange={(key, value) => setAppState(p => ({...p, problemFraming: {...p.problemFraming, [key]: value}}))} color="purple" category="problemFraming" subcategory={null} onAddCustomFactor={() => handleOpenModal('problemFraming', 'readiness', null)} onRemoveFactor={(name) => removeFactor('problemFraming', name, 'readiness')} onResetGroup={() => handleResetGroup('problemFraming', 'readiness')} />
                         <SliderGroup title="🎖️ Success Criteria" values={getValuesForGroup(appState.problemFramingKeys.success, appState.problemFraming)} onValueChange={(key, value) => setAppState(p => ({...p, problemFraming: {...p.problemFraming, [key]: value}}))} color="pink" category="problemFraming" subcategory={null} onAddCustomFactor={() => handleOpenModal('problemFraming', 'success', null)} onRemoveFactor={(name) => removeFactor('problemFraming', name, 'success')} onResetGroup={() => handleResetGroup('problemFraming', 'success')} />
 
-                        
                         <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between h-full">
                           <div>
                             <h3 className="text-xs font-black mb-8 text-gray-500 uppercase tracking-[0.3em] flex items-center gap-3">
@@ -427,51 +426,49 @@ const AnalyticsNeuralFramework: React.FC = () => {
                     )}
                   </section>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                      <section className="space-y-12">
-                        <SectionHeader id="layer1" title="Phase I: Initial" badgeText="Layer 1" badgeColor="green" />
-                        {!collapsedSections['layer1'] && (
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                            <SliderGroup title="💰 Resources" values={getValuesForGroup(appState.realityWeightsKeys.layer1.resource, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'resource', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'resource', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'resource', 'layer1')} />
-                            <SliderGroup title="📈 Data Depth" values={getValuesForGroup(appState.realityWeightsKeys.layer1.data, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'data', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'data', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'data', 'layer1')} />
-                            <SliderGroup title="🏢 Organizational Context" values={getValuesForGroup(appState.realityWeightsKeys.layer1.org, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'org', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'org', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'org', 'layer1')} />
-                            <SliderGroup title="⚠️ Risk Management" values={getValuesForGroup(appState.realityWeightsKeys.layer1.risk, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'risk', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'risk', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'risk', 'layer1')} />
-                          </div>
-                        )}
-                      </section>
-                      <section className="space-y-12">
-                        <SectionHeader id="layer2" title="Phase II: Technical" badgeText="Layer 2" badgeColor="yellow" />
-                        {!collapsedSections['layer2'] && (
-                          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-                              <SliderGroup title="🖥️ Platform" values={getValuesForGroup(appState.realityWeightsKeys.layer2.infra, appState.realityWeights.layer2)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer2: {...p.realityWeights.layer2, [key]: value}}}))} color="yellow" category="layer2Weights" subcategory="layer2" onAddCustomFactor={() => handleOpenModal('layer2Weights', 'infra', 'layer2')} onRemoveFactor={(name) => removeFactor('layer2Weights', name, 'infra', 'layer2')} onResetGroup={() => handleResetGroup('layer2Weights', 'infra', 'layer2')} />
-                              <SliderGroup title="⚙️ Solution Development" values={getValuesForGroup(appState.realityWeightsKeys.layer2.dev, appState.realityWeights.layer2)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer2: {...p.realityWeights.layer2, [key]: value}}}))} color="yellow" category="layer2Weights" subcategory="layer2" onAddCustomFactor={() => handleOpenModal('layer2Weights', 'dev', 'layer2')} onRemoveFactor={(name) => removeFactor('layer2Weights', name, 'dev', 'layer2')} onResetGroup={() => handleResetGroup('layer2Weights', 'dev', 'layer2')} />
-                              <SliderGroup title="👨‍💻 Expertise" values={getValuesForGroup(appState.realityWeightsKeys.layer2.team, appState.realityWeights.layer2)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer2: {...p.realityWeights.layer2, [key]: value}}}))} color="yellow" category="layer2Weights" subcategory="layer2" onAddCustomFactor={() => handleOpenModal('layer2Weights', 'team', 'layer2')} onRemoveFactor={(name) => removeFactor('layer2Weights', name, 'team', 'layer2')} onResetGroup={() => handleResetGroup('layer2Weights', 'team', 'layer2')} />
-                          </div>
-                        )}
-                      </section>
-                  </div>
+                  <section>
+                    <SectionHeader id="layer1" title="Phase I: Initial" badgeText="Layer 1" badgeColor="green" />
+                    {!collapsedSections['layer1'] && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <SliderGroup title="💰 Resources" values={getValuesForGroup(appState.realityWeightsKeys.layer1.resource, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'resource', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'resource', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'resource', 'layer1')} />
+                        <SliderGroup title="📈 Data Depth" values={getValuesForGroup(appState.realityWeightsKeys.layer1.data, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'data', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'data', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'data', 'layer1')} />
+                        <SliderGroup title="🏢 Organizational Context" values={getValuesForGroup(appState.realityWeightsKeys.layer1.org, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'org', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'org', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'org', 'layer1')} />
+                        <SliderGroup title="⚠️ Risk Management" values={getValuesForGroup(appState.realityWeightsKeys.layer1.risk, appState.realityWeights.layer1)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer1: {...p.realityWeights.layer1, [key]: value}}}))} color="green" category="layer1Weights" subcategory="layer1" onAddCustomFactor={() => handleOpenModal('layer1Weights', 'risk', 'layer1')} onRemoveFactor={(name) => removeFactor('layer1Weights', name, 'risk', 'layer1')} onResetGroup={() => handleResetGroup('layer1Weights', 'risk', 'layer1')} />
+                      </div>
+                    )}
+                  </section>
+                  
+                  <section>
+                    <SectionHeader id="layer2" title="Phase II: Technical" badgeText="Layer 2" badgeColor="yellow" />
+                    {!collapsedSections['layer2'] && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+                          <SliderGroup title="🖥️ Platform" values={getValuesForGroup(appState.realityWeightsKeys.layer2.infra, appState.realityWeights.layer2)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer2: {...p.realityWeights.layer2, [key]: value}}}))} color="yellow" category="layer2Weights" subcategory="layer2" onAddCustomFactor={() => handleOpenModal('layer2Weights', 'infra', 'layer2')} onRemoveFactor={(name) => removeFactor('layer2Weights', name, 'infra', 'layer2')} onResetGroup={() => handleResetGroup('layer2Weights', 'infra', 'layer2')} />
+                          <SliderGroup title="⚙️ Solution Development" values={getValuesForGroup(appState.realityWeightsKeys.layer2.dev, appState.realityWeights.layer2)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer2: {...p.realityWeights.layer2, [key]: value}}}))} color="yellow" category="layer2Weights" subcategory="layer2" onAddCustomFactor={() => handleOpenModal('layer2Weights', 'dev', 'layer2')} onRemoveFactor={(name) => removeFactor('layer2Weights', name, 'dev', 'layer2')} onResetGroup={() => handleResetGroup('layer2Weights', 'dev', 'layer2')} />
+                          <SliderGroup title="👨‍💻 Expertise" values={getValuesForGroup(appState.realityWeightsKeys.layer2.team, appState.realityWeights.layer2)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer2: {...p.realityWeights.layer2, [key]: value}}}))} color="yellow" category="layer2Weights" subcategory="layer2" onAddCustomFactor={() => handleOpenModal('layer2Weights', 'team', 'layer2')} onRemoveFactor={(name) => removeFactor('layer2Weights', name, 'team', 'layer2')} onResetGroup={() => handleResetGroup('layer2Weights', 'team', 'layer2')} />
+                      </div>
+                    )}
+                  </section>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                      <section className="space-y-12">
-                        <SectionHeader id="layer3" title="Phase III: Operational" badgeText="Layer 3" badgeColor="red" />
-                        {!collapsedSections['layer3'] && (
-                          <div className="space-y-10">
-                              <SliderGroup title="🚀 Adoption" values={getValuesForGroup(appState.realityWeightsKeys.layer3.readiness, appState.realityWeights.layer3)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer3: {...p.realityWeights.layer3, [key]: value}}}))} color="red" category="layer3Weights" subcategory="layer3" onAddCustomFactor={() => handleOpenModal('layer3Weights', 'readiness', 'layer3')} onRemoveFactor={(name) => removeFactor('layer3Weights', name, 'readiness', 'layer3')} onResetGroup={() => handleResetGroup('layer3Weights', 'readiness', 'layer3')} />
-                              <SliderGroup title="🔗 Business Integration" values={getValuesForGroup(appState.realityWeightsKeys.layer3.integration, appState.realityWeights.layer3)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer3: {...p.realityWeights.layer3, [key]: value}}}))} color="red" category="layer3Weights" subcategory="layer3" onAddCustomFactor={() => handleOpenModal('layer3Weights', 'integration', 'layer3')} onRemoveFactor={(name) => removeFactor('layer3Weights', name, 'integration', 'layer3')} onResetGroup={() => handleResetGroup('layer3Weights', 'integration', 'layer3')} />
-                              <SliderGroup title="💎 Impact" values={getValuesForGroup(appState.realityWeightsKeys.layer3.value, appState.realityWeights.layer3)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer3: {...p.realityWeights.layer3, [key]: value}}}))} color="red" category="layer3Weights" subcategory="layer3" onAddCustomFactor={() => handleOpenModal('layer3Weights', 'value', 'layer3')} onRemoveFactor={(name) => removeFactor('layer3Weights', name, 'value', 'layer3')} onResetGroup={() => handleResetGroup('layer3Weights', 'value', 'layer3')} />
-                          </div>
-                        )}
-                      </section>
-                      <section className="space-y-12">
-                        <SectionHeader id="bias" title="Contextual Bias" badgeText="Bias Layer" badgeColor="purple" />
-                        {!collapsedSections['bias'] && (
-                          <div className="space-y-10">
-                            <SliderGroup title="🏛️ Internal" values={getValuesForGroup(appState.biasTermKeys.org, appState.biasTerms)} onValueChange={(key, value) => setAppState(p => ({...p, biasTerms: {...p.biasTerms, [key]: value}}))} color="purple" category="biasTerms" subcategory={null} onAddCustomFactor={() => handleOpenModal('biasTerms', 'org', null)} onRemoveFactor={(name) => removeFactor('biasTerms', name, 'org')} onResetGroup={() => handleResetGroup('biasTerms', 'org')} />
-                            <SliderGroup title="🌍 Strategic" values={getValuesForGroup(appState.biasTermKeys.external, appState.biasTerms)} onValueChange={(key, value) => setAppState(p => ({...p, biasTerms: {...p.biasTerms, [key]: value}}))} color="purple" category="biasTerms" subcategory={null} onAddCustomFactor={() => handleOpenModal('biasTerms', 'external', null)} onRemoveFactor={(name) => removeFactor('biasTerms', name, 'external')} onResetGroup={() => handleResetGroup('biasTerms', 'external')} />
-                          </div>
-                        )}
-                      </section>
-                  </div>
+                  <section>
+                    <SectionHeader id="layer3" title="Phase III: Operational" badgeText="Layer 3" badgeColor="red" />
+                    {!collapsedSections['layer3'] && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+                          <SliderGroup title="🚀 Adoption" values={getValuesForGroup(appState.realityWeightsKeys.layer3.readiness, appState.realityWeights.layer3)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer3: {...p.realityWeights.layer3, [key]: value}}}))} color="red" category="layer3Weights" subcategory="layer3" onAddCustomFactor={() => handleOpenModal('layer3Weights', 'readiness', 'layer3')} onRemoveFactor={(name) => removeFactor('layer3Weights', name, 'readiness', 'layer3')} onResetGroup={() => handleResetGroup('layer3Weights', 'readiness', 'layer3')} />
+                          <SliderGroup title="🔗 Business Integration" values={getValuesForGroup(appState.realityWeightsKeys.layer3.integration, appState.realityWeights.layer3)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer3: {...p.realityWeights.layer3, [key]: value}}}))} color="red" category="layer3Weights" subcategory="layer3" onAddCustomFactor={() => handleOpenModal('layer3Weights', 'integration', 'layer3')} onRemoveFactor={(name) => removeFactor('layer3Weights', name, 'integration', 'layer3')} onResetGroup={() => handleResetGroup('layer3Weights', 'integration', 'layer3')} />
+                          <SliderGroup title="💎 Impact" values={getValuesForGroup(appState.realityWeightsKeys.layer3.value, appState.realityWeights.layer3)} onValueChange={(key, value) => setAppState(p => ({...p, realityWeights: {...p.realityWeights, layer3: {...p.realityWeights.layer3, [key]: value}}}))} color="red" category="layer3Weights" subcategory="layer3" onAddCustomFactor={() => handleOpenModal('layer3Weights', 'value', 'layer3')} onRemoveFactor={(name) => removeFactor('layer3Weights', name, 'value', 'layer3')} onResetGroup={() => handleResetGroup('layer3Weights', 'value', 'layer3')} />
+                      </div>
+                    )}
+                  </section>
+                  
+                  <section>
+                    <SectionHeader id="bias" title="Contextual Bias" badgeText="Bias Layer" badgeColor="purple" />
+                    {!collapsedSections['bias'] && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <SliderGroup title="🏛️ Internal" values={getValuesForGroup(appState.biasTermKeys.org, appState.biasTerms)} onValueChange={(key, value) => setAppState(p => ({...p, biasTerms: {...p.biasTerms, [key]: value}}))} color="purple" category="biasTerms" subcategory={null} onAddCustomFactor={() => handleOpenModal('biasTerms', 'org', null)} onRemoveFactor={(name) => removeFactor('biasTerms', name, 'org')} onResetGroup={() => handleResetGroup('biasTerms', 'org')} />
+                        <SliderGroup title="🌍 Strategic" values={getValuesForGroup(appState.biasTermKeys.external, appState.biasTerms)} onValueChange={(key, value) => setAppState(p => ({...p, biasTerms: {...p.biasTerms, [key]: value}}))} color="purple" category="biasTerms" subcategory={null} onAddCustomFactor={() => handleOpenModal('biasTerms', 'external', null)} onRemoveFactor={(name) => removeFactor('biasTerms', name, 'external')} onResetGroup={() => handleResetGroup('biasTerms', 'external')} />
+                      </div>
+                    )}
+                  </section>
               </div>
               <div className="h-32"></div>
           </div>
