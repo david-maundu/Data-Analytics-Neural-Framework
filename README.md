@@ -1,6 +1,10 @@
 # Data Analytics Neural Framework
 
-![Neural Analytics Header](https://raw.githubusercontent.com/google/material-design-icons/master/png/action/settings_input_component/black/48dp.png)
+[![Deploy to GitHub Pages](https://github.com/david-maundu/Data-Analytics-Neural-Framework/actions/workflows/deploy.yml/badge.svg)](https://github.com/david-maundu/Data-Analytics-Neural-Framework/actions/workflows/deploy.yml)
+
+**🚀 [Launch Application](https://david-maundu.github.io/Data-Analytics-Neural-Framework/)**
+
+![Description of Image](images/Neural_Framework.png)
 
 An enterprise-grade strategic assessment engine designed to quantify project actionability and implementation risk. This framework moves beyond simple averaging by utilizing non-linear neural gate simulations and geometric mean gating to model real-world strategic constraints.
 
@@ -38,18 +42,83 @@ The engine is fully modular. Inject custom contextual variables into any layer o
 
 ## 💻 Tech Stack
 
-- **React 19**: UI Layer.
-- **Tailwind CSS**: Enterprise-grade responsive styling.
-- **Lucide Icons**: Visual semiotics.
-- **ESM Modules**: Modern, zero-build deployment architecture.
+- **React 19**: UI Layer
+- **Vite 6**: Build tooling & development server
+- **TypeScript 5.8**: Type safety
+- **Tailwind CSS**: Enterprise-grade responsive styling
+- **GitHub Pages**: Static hosting
 
-## 🏁 Getting Started
+## 🎯 Getting Started
 
-Since this project uses modern ESM imports and a CDN-based setup, there is **no build step required**.
+### Online (Recommended)
+Simply visit the live application:
+**[https://david-maundu.github.io/Data-Analytics-Neural-Framework/](https://david-maundu.github.io/Data-Analytics-Neural-Framework/)**
 
-1. Clone the repository.
-2. Serve the root directory using any local web server (e.g., `npx serve`, `python -m http.server`, or Live Server in VS Code).
-3. Open `index.html` in a modern browser.
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/david-maundu/Data-Analytics-Neural-Framework.git
+   cd YOUR_REPO_NAME
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   ```
+   http://localhost:3000
+   ```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The optimized build will be in the `dist/` directory.
+
+## 📊 How to Use
+
+1. **Quantum Framing**: Assign scores [1-10] to Problem Definition and Business Context to establish the base potential
+2. **Reality Gating**: Calibrate feasibility layers. Low scores act as 'Strategic Gates' using Geometric Mean bottlenecking
+3. **Bias Modulation**: Inject Bias Terms to account for organizational culture, friction, or competitive catalysts
+4. **Focus Simulation**: Apply multipliers [1.1x - 1.5x] to pin specific drivers for management priority testing
+5. **Analyze Results**: Review the Neural Network Results panel for actionability scores and recommendations
+6. **Save Scenarios**: Store different configurations for comparison and future reference
+
+## 🔧 Configuration
+
+### Customizing the Base Path
+If deploying to a different hosting service or subdirectory, update `vite.config.ts`:
+
+```typescript
+export default defineConfig({
+  base: '/your-custom-path/',
+  // ... rest of config
+});
+```
+
+## 📈 Deployment
+
+This project automatically deploys to GitHub Pages via GitHub Actions on every push to `main`. 
+
+To deploy your own instance:
+1. Fork this repository
+2. Enable GitHub Pages in Settings → Pages → Source: GitHub Actions
+3. Push to main branch
+4. Your app will be live at `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
@@ -57,4 +126,27 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+## 🎓 Mathematical Foundation
+
+### Engine Theory: Asymptotic Actionability
+
+Optimization is non-linear. The framework utilizes a **Sigmoid Activation Gate** where the jump from 90% to 95% feasibility is mathematically 4x harder than 0% to 50%. This simulates real-world entropy.
+
+**Sigmoid Function:**
+```
+f(x) = 1 / (1 + e^(-x))
+```
+
+**Geometric Mean Gate:**
+```
+G = ⁿ√(∏xᵢ)
+```
+
+This ensures that weak links in execution capacity create proportional drag on the entire strategic outcome.
+
+---
+
 *Neural Strategy Command © Global Strategic Services*
+
+**Version:** 2.5.1-STRAT-A1  
+**Node Cluster:** Sigmoid/Geometric Hybrid
